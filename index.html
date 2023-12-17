@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To My Glitchy World</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://e0.pxfuel.com/wallpapers/560/120/desktop-wallpaper-hacker-background-hacker-screen.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: green;
+            font-family: 'Courier New', monospace; /* Change the font-family as needed */
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            position: relative;
+            animation: glitch 1s infinite linear;
+        }
+
+        h1::before,
+        h1::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: red; /* Change the color of the glitch effect as needed */
+            overflow: hidden;
+        }
+
+        h1::before {
+            left: 2px;
+            text-shadow: -2px 0 green;
+            animation: glitchBefore 1s infinite linear alternate-reverse;
+        }
+
+        h1::after {
+            left: -2px;
+            text-shadow: 2px 0 blue;
+            animation: glitchAfter 1.5s infinite linear alternate-reverse;
+        }
+
+        .credit {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: white;
+            font-size: 0.8em;
+        }
+
+        @keyframes glitch {
+            20%, 24%, 53%, 57%, 70%, 74% {
+                transform: translate(2px, 0);
+            }
+            22%, 27%, 55%, 60%, 72%, 77% {
+                transform: translate(-2px, 0);
+            }
+            75%, 76% {
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes glitchBefore {
+            20%, 24%, 53%, 57%, 70%, 74% {
+                transform: translate(4px, 0);
+            }
+            22%, 27%, 55%, 60%, 72%, 77% {
+                transform: translate(-4px, 0);
+            }
+            75%, 76% {
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes glitchAfter {
+            20%, 24%, 53%, 57%, 70%, 74% {
+                transform: translate(2px, 0);
+            }
+            22%, 27%, 55%, 60%, 72%, 77% {
+                transform: translate(-2px, 0);
+            }
+            75%, 76% {
+                transform: translate(0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 data-text="Welcome To My Glitchy World">Welcome To My Glitchy World</h1>
+    <div class="credit">-Made by Abhimanyu Saini</div>
+</body>
+</html>
